@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>New</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/market/sales}" th:object="${sale}">
+    <label for="sales_date">Enter sales date (dd/MM/yyyy): </label>
+    <input type="text" th:field="*{sales_date}" id="sales_date"/>
+
+    <div style="color: red" th:if="${#fields.hasErrors('sales_date')}" th:errors="*{sales_date}">Name error</div>
+
+    <br/>
+    <label for="total_amount">Enter total amount: </label>
+    <input type="text" th:field="*{total_amount}" id="total_amount"/>
+    <div style="color: red" th:if="${#fields.hasErrors('total_amount')}" th:errors="*{total_amount}">Age error</div>
+
+    <br/>
+    <input type="submit" value="Create!"/>
+</form>
+
+</body>
+</html>

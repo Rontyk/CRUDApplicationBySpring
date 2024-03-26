@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<div th:each="address : ${addresses}">
+    <a th:href="@{/addresses /{id}(id=${address.getId()})}"
+       th:text="${address.getCity() + ', ' + address.getStreet()}">user</a>
+</div>
+
+
+<br/>
+<hr/>
+
+<a href="/address/new">Create new address</a>
+
+
+</body>
+</html>

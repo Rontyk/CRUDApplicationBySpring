@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>New</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/market/addresses}" th:object="${address}">
+    <label for="street">Enter street: </label>
+    <input type="text" th:field="*{street}" id="street"/>
+
+    <div style="color: red" th:if="${#fields.hasErrors('street')}" th:errors="*{street}">Name error</div>
+
+    <br/>
+    <label for="city_id">Enter city: </label>
+    <input type="text" th:field="*{city_id}" id="city_id"/>
+    <div style="color: red" th:if="${#fields.hasErrors('city_id')}" th:errors="*{city_id}">Email error</div>
+
+    <br/>
+    <label for="zip_code">Enter zip code: </label>
+    <input type="text" th:field="*{zip_code}" id="zip_code"/>
+    <div style="color: red" th:if="${#fields.hasErrors('zip_code')}" th:errors="*{zip_code}">Age error</div>
+    <br/>
+
+    <input type="submit" value="Create!"/>
+</form>
+
+</body>
+</html>

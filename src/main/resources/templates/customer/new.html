@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>New</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/market/customers}" th:object="${customer}">
+    <label for="first_name">Enter first name: </label>
+    <input type="text" th:field="*{first_name}" id="first_name"/>
+
+    <div style="color: red" th:if="${#fields.hasErrors('first_name')}" th:errors="*{first_name}">Name error</div>
+
+    <br/>
+    <label for="last_name">Enter last name: </label>
+    <input type="text" th:field="*{last_name}" id="last_name"/>
+    <div style="color: red" th:if="${#fields.hasErrors('last_name')}" th:errors="*{last_name}">Age error</div>
+
+    <br/>
+    <label for="phone">Enter phone numbers: </label>
+    <input type="text" th:field="*{phone}" id="phone"/>
+    <div style="color: red" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}">Email error</div>
+
+    <br/>
+    <label for="email">Enter email: </label>
+    <input type="text" th:field="*{email}" id="email"/>
+    <div style="color: red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email error</div>
+
+    <br/>
+    <input type="submit" value="Create!"/>
+</form>
+
+</body>
+</html>
