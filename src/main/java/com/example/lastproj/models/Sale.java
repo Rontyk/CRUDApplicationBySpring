@@ -21,9 +21,7 @@ public class Sale {
     private int sale_id;
     @Temporal(TemporalType.DATE)
     @Column(name = "sales_date")
-    @NotEmpty(message = "Enter")
     private Date saleDate;
-    @NotEmpty(message = "Enter")
     @Column(name = "total_amount")
     private int totalAmount;
     @ManyToOne

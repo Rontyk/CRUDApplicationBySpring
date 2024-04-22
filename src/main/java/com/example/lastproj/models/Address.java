@@ -1,7 +1,7 @@
 package com.example.lastproj.models;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotEmpty;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -10,8 +10,7 @@ import java.util.List;
 
 
 @Entity
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @Table(name = "address")
 public class Address {
@@ -20,13 +19,11 @@ public class Address {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "street")
-    @NotEmpty(message = "Enter")
+    @Column(name = "street", nullable = false)
     private String street;
 
 
-    @Column(name = "zip_code")
-    @NotEmpty(message = "Enter")
+    @Column(name = "zip_code", nullable = false)
     private String zip_code;
 
     @OneToMany(mappedBy = "address")

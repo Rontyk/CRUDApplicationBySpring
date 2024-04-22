@@ -2,6 +2,7 @@ package com.example.lastproj.services;
 
 import com.example.lastproj.models.Address;
 import com.example.lastproj.repositories.AddressesRepository;
+import com.example.lastproj.util.AddressNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,7 +30,7 @@ public class AddressesService {
     public Address findOne(int id){
         Optional<Address> foundAddress =  addressesRepository.findById(id);
 
-        return foundAddress.orElse(null);
+        return foundAddress.orElseThrow(AddressNotFoundException::new);
     }
 
     @Transactional

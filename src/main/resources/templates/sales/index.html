@@ -9,16 +9,16 @@
 </head>
 <body>
 
-<div th:each="staff : ${staffs}">
-    <a th:href="@{/staffs /{id}(id=${staff.getStaf_id()})}"
-       th:text="${staff.getLastname() + ' ' + staff.getFirstname() + '-' + staff.getPosition()}">user</a>
+<div th:each="sale : ${sales}">
+    <a th:href="@{/sales/{id}(id=${sale.getSale_id()})}"
+       th:text="${'The total amount: ' + sale.getTotalAmount() + ', day when the product saled: ' + sale.getSaleDate()}">user</a>
 </div>
 
 
 <br/>
 <hr/>
 
-<a href="/staff/new">Create new staff</a>
+<a href="sales/new">Create new sale</a>
 
 
 </body>

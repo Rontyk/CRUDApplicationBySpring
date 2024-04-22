@@ -8,18 +8,10 @@
     <title>Document</title>
 </head>
 <body>
+<p th:text="${city.getCityName()}">VALUE</p>
 
-<div th:each="sale : ${sales}">
-    <a th:href="@{/sales /{id}(id=${sale.getSale_id()})}"
-       th:text="${'The total amount: ' + sale.getTotalAmount() + ', day when the product saled: ' + sale.getSaleDate()}">user</a>
-</div>
-
-
-<br/>
-<hr/>
-
-<a href="/sale/new">Create new sale</a>
-
-
+<form th:method="DELETE" th:action="@{/cities/{id}(id=${city.getCity_id()})}">
+    <input type="submit" value="Delete"/>
+</form>
 </body>
 </html>

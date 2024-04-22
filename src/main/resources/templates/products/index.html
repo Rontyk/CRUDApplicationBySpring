@@ -9,16 +9,16 @@
 </head>
 <body>
 
-<div th:each="address : ${addresses}">
-    <a th:href="@{/addresses /{id}(id=${address.getId()})}"
-       th:text="${address.getCity() + ', ' + address.getStreet()}">user</a>
+<div th:each="product : ${products}">
+    <a th:href="@{/products/{id}(id=${product.getProduct_id()})}"
+       th:text="${'product: ' + product.getProductName() + ', price: ' + product.getPrice()}">user</a>
 </div>
 
 
 <br/>
 <hr/>
 
-<a href="/address/new">Create new address</a>
+<a href="/product/new">Create new product</a>
 
 
 </body>

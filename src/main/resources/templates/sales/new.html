@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>New</title>
+</head>
+<body>
+
+<form method="POST" action="/market/sales">
+
+    <label for="sales_date">Enter sales_date (dd/mm/yyyy): </label>
+    <input type="text" id="sales_date" name="salesDate"/>
+    <br/>
+
+    <label for="total_amount">Enter total amount: </label>
+    <input type="number"  id="total_amount" name="totalAmount"/>
+    <br/>
+
+    <label for="customer_id">Enter customer id: </label>
+    <input type="number"  id="customer_id" name="customer_id"/>
+    <br/>
+
+    <label for="product_id">Enter product id: </label>
+    <input type="number"  id="product_id" name="product_id"/>
+    <br/>
+
+    <input type="submit" value="Create!"  />
+</form>
+
+
+</body>
+</html>

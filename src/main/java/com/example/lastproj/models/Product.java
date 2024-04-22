@@ -26,17 +26,13 @@ public class Product {
     @Column(name = "price")
     @NotEmpty(message = "Enter")
     private Double price;
-    @Column(name = "category_id")
-    @NotEmpty(message = "Enter")
-    private int categoryId;
     @OneToMany(mappedBy = "product")
     private List<Sale> sales;
 
-    public Product(String productName, String description, Double price, int categoryId) {
+    public Product(String productName, String description, Double price) {
         this.productName = productName;
         this.description = description;
         this.price = price;
-        this.categoryId = categoryId;
     }
 
     @Override
@@ -46,7 +42,6 @@ public class Product {
                 ", productName='" + productName + '\'' +
                 ", description='" + description + '\'' +
                 ", price=" + price +
-                ", categoryId=" + categoryId +
                 ", sales=" + sales +
                 '}';
     }

@@ -2,7 +2,9 @@ package com.example.lastproj.models;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,15 +23,16 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int customer_id;
     @Column(name = "first_name")
-    @NotEmpty(message = "Enter")
+    @NotEmpty(message = "Enter first name")
     private String firstname;
     @Column(name = "last_name")
-    @NotEmpty(message = "Enter")
+    @NotEmpty(message = "Enter last name")
     private String lastname;
-    @NotEmpty(message = "Enter")
+    @NotEmpty(message = "Enter phone number")
     @Column(name = "phone")
+    @Min(value = 0, message = "Age should be greater than 0")
     private String phoneNumber;
-    @NotEmpty(message = "Enter")
+    @NotEmpty(message = "Enter email")
     @Column(name = "email")
     @Email
     private String email;

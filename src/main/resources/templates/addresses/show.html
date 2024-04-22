@@ -9,17 +9,11 @@
 </head>
 <body>
 
-<div th:each="customer : ${customers}">
-    <a th:href="@{/customers /{id}(id=${customer.getCustomer_id()})}"
-       th:text="${customer.getLastname() + ' ' + customer.getFirstname() + ', ' + customer.getPhoneNumber()}">user</a>
-</div>
+<p th:text="${city.getCityName() + ', ' + address.getZip_code()}">VALUE</p>
+<p th:text="${address.getStreet()}">VALUE</p>
 
-
-<br/>
-<hr/>
-
-<a href="/customer/new">Create new customer</a>
-
-
+<form th:method="DELETE" th:action="@{/addresses/{id}(id=${address.getId()})}">
+    <input type="submit" value="Delete"/>
+</form>
 </body>
 </html>

@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<form th:method="PATCH" th:action="@{/cities/{id}(id=${city.getCity_id()})}" th:object="${city}">
+    <label for="city_name">Enter name: </label>
+    <input type="text" th:field="*{cityName}" id="city_name"/>
+
+    <input type="submit" value="Create!"  />
+</form>
+
+</body>
+</html>

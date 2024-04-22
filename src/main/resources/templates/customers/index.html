@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<div th:each="customer : ${customers}">
+    <a th:href="@{/customers/{id}(id=${customer.getCustomer_id()})}"
+       th:text="${customer.getLastname() + ' ' + customer.getFirstname() + ', ' + customer.getPhoneNumber()}">user</a>
+</div>
+
+
+<br/>
+<hr/>
+
+<a href="customers/new">Create new customer</a>
+
+
+</body>
+</html>

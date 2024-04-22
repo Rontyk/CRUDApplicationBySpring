@@ -30,7 +30,7 @@ public class CitiesService {
     public City findOne(int id){
         Optional<City> foundCity =  citiesRepository.findById(id);
 
-        return foundCity.orElse(null);
+        return foundCity.orElseThrow();
     }
 
     @Transactional

@@ -9,15 +9,15 @@
 </head>
 <body>
 
-<form th:method="POST" th:action="@{/market/cities}" th:object="${city}">
+<form method="POST" action="/market/cities">
+
     <label for="city_name">Enter city name: </label>
-    <input type="text" th:field="*{city_name}" id="city_name"/>
+    <input type="text" id="city_name" name="cityName"/>
+    <br>
 
-    <div style="color: red" th:if="${#fields.hasErrors('city_name')}" th:errors="*{city_name}">Name error</div>
-
-    <br/>
-    <input type="submit" value="Create!"/>
+    <input type="submit" value="Create!"  />
 </form>
+
 
 </body>
 </html>

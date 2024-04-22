@@ -9,16 +9,16 @@
 </head>
 <body>
 
-<div th:each="city : ${cities}">
-    <a th:href="@{/cities /{id}(id=${city.getCity_id()})}"
-       th:text="${city.getCityName()}">user</a>
+<div th:each="address : ${addresses}">
+    <a th:href="@{/addresses/{id}(id=${address.getId()})}"
+       th:text="${address.getCity() + ', ' + address.getStreet()}">user</a>
 </div>
 
 
 <br/>
 <hr/>
 
-<a href="/city/new">Create new city</a>
+<a href="addresses/new">Create new address</a>
 
 
 </body>
